@@ -1,8 +1,5 @@
 <ap-photo
-  url="https://feijoadasimulator.top/br/sources/2932.jpeg"
-  description="Nando Moura careca"
-></ap-photo>
-<ap-photo
-  url="https://images4.alphacoders.com/936/936378.jpg"
-  description="Universo"
+  *ngFor="let photo of photos"
+  [url]="photo.url"
+  [description]="photo.description"
 ></ap-photo>
