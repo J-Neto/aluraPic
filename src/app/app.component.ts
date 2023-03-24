@@ -6,7 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'aluraPic';
-  description = 'Nando Moura careca'
-  url = "https://feijoadasimulator.top/br/sources/2932.jpeg"
 }
