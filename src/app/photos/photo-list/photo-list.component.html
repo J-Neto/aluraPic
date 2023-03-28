@@ -6,8 +6,9 @@
       type="search"
       placeholder="search..."
       autofocus
-      (keyup)="filter = inputFilter.value"
+      (keyup)="debounce.next(inputFilter.value)"
     />
   </form>
 </div>
 <ap-photos1 [photos]="photos | filterByDescription : filter"></ap-photos1>
+<ap-load-button (click)="load()" [hasMore]="hasMore"> </ap-load-button>
