@@ -1,1 +1,13 @@
+<div class="text-center mt-3 mb-3">
+  <form>
+    <input
+      #inputFilter
+      class="rounded"
+      type="search"
+      placeholder="search..."
+      autofocus
+      (keyup)="filter = inputFilter.value"
+    />
+  </form>
+</div>
 <ap-photos1 [photos]="photos"></ap-photos1>
