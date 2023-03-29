@@ -1,14 +1,5 @@
-<div class="text-center mt-3 mb-3">
-  <form>
-    <input
-      #inputFilter
-      class="rounded"
-      type="search"
-      placeholder="search..."
-      autofocus
-      (keyup)="debounce.next(inputFilter.value)"
-    />
-  </form>
-</div>
+<ap-search (onTyping)="filter = $event" [value]="filter"></ap-search>
+
 <ap-photos1 [photos]="photos | filterByDescription : filter"></ap-photos1>
+
 <ap-load-button (click)="load()" [hasMore]="hasMore"> </ap-load-button>
