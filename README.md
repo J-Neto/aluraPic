@@ -44,6 +44,10 @@
 </a>
 <p></p>
 
+:zap: Obs
+=======================
+- The only working route is: /user/flavio
+
 🚀 Features
 =======================
 - [x] List photos by user
