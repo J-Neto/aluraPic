@@ -37,14 +37,25 @@ export class SignInComponent implements OnInit {
     this.authService
       .authenticate(userName, password)
       .subscribe(
-        () => {
-          this.router.navigate(['user', userName]);
-        },
-        err => {
-          console.log(err);
-          this.loginForm.reset();
-          alert('Invalid username or password');
+        {
+          next: () => {
+            this.router.navigate(['user', userName]);
+          },
+          error: (err) => {
+            alert('Invalid username or password');
+            this.loginForm.reset();
+          }
         }
-      );
+      )
+      // .subscribe(
+      //   () => {
+      //     this.router.navigate(['user', userName]);
+      //   },
+      //   err => {
+      //     console.log(err);
+      //     this.loginForm.reset();
+      //     alert('Invalid username or password');
+      //   }
+      // );
   }
 }
