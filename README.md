@@ -8,7 +8,7 @@
 </p>
 
 <h4 align="center"> 
-	✅  Angular App 🚀 Building...  ✅
+	✅  Angular App 🚀 construction...  ✅
 </h4>
 
 <p align="center">
