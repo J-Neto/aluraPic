@@ -47,15 +47,5 @@ export class SignInComponent implements OnInit {
           }
         }
       )
-      // .subscribe(
-      //   () => {
-      //     this.router.navigate(['user', userName]);
-      //   },
-      //   err => {
-      //     console.log(err);
-      //     this.loginForm.reset();
-      //     alert('Invalid username or password');
-      //   }
-      // );
   }
 }
