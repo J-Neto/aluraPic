@@ -5,28 +5,17 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
-import { SignInComponent } from './home/signin/signin.component';
-import { AuthGuard } from './core/auth/auth.guard';
-import { SignUpComponent } from './home/signup/signup.component';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
-        pathMatch: 'prefix',
-        canActivate: [ AuthGuard ],
-        children: [
-            {
-                path: '',
-                component: SignInComponent,
-                pathMatch: 'prefix',
-            },
-            {
-                path: 'signup',
-                component: SignUpComponent,
-            },
-        ]
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
+    {
+        path: 'home',
+        // loadChildren: './home/home.module#HomeModule'
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
     },
     { 
         path: 'user/:userName', 
@@ -47,6 +36,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [ RouterModule.forRoot(routes) ],
+    // imports: [ RouterModule.forRoot(routes, { useHash: true } )],
     exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
